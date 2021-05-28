@@ -38,12 +38,12 @@ class PacmanIndicator extends Indicator {
 
   @override
   List<AnimationController> animation() {
-    var controllers = List<AnimationController>();
+    var controllers = <AnimationController>[];
 
     var controller = new AnimationController(
         duration: Duration(milliseconds: 325), vsync: context);
 
-    var translateTween = new Tween(begin: 0, end: 0.5).animate(controller);
+    var translateTween = new Tween<double>(begin: 0, end: 0.5).animate(controller);
     var alphaTween = new IntTween(begin: 255, end: 122).animate(controller);
     var rotateTween1 = new Tween(begin: 0.0, end: 45.0).animate(controller);
     var rotateTween2 = new Tween(begin: 0.0, end: -45.0).animate(controller);

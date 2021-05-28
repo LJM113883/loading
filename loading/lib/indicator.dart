@@ -2,8 +2,8 @@ import 'package:flutter/widgets.dart';
 import 'package:loading/loading.dart';
 
 abstract class Indicator {
-  LoadingState context;
-  List<AnimationController> animationControllers;
+  late LoadingState context;
+  late List<AnimationController> animationControllers;
 
   paint(Canvas canvas, Paint paint, Size size);
 

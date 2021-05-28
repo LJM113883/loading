@@ -3,14 +3,16 @@ import 'package:flutter/widgets.dart';
 import 'package:loading/indicator.dart';
 import 'package:loading/indicator/ball_scale_indicator.dart';
 
+import 'indicator/ball_scale_indicator.dart';
+
 class Loading extends StatefulWidget {
-  Indicator indicator;
+  late Indicator indicator;
   double size;
   Color color;
 
-  Loading({this.indicator,  this.size = 50.0, this.color = Colors.white}) {
+  Loading({Indicator? indicator, this.size = 50.0, this.color = Colors.white}) {
     if (indicator == null) {
-      indicator = BallScaleIndicator();
+      this.indicator = BallScaleIndicator();
     } else {
       this.indicator = indicator;
     }
@@ -53,7 +55,7 @@ class LoadingState extends State<Loading> with TickerProviderStateMixin {
 class _Painter extends CustomPainter {
   Indicator indicator;
   Color color;
-  Paint defaultPaint;
+  late Paint defaultPaint;
 
   _Painter(this.indicator, this.color) {
     defaultPaint = Paint()
